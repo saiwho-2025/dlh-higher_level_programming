@@ -1,6 +1,5 @@
-#!/usr/bin/env python3
+#!/usr/bin/python3
 """Import add function and print addition result."""
-
 from add_0 import add
 
 
