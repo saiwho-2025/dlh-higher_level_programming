@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""This module defines a Square."""
+"""This module defines and prints a Square."""
 
 
 class Square:
@@ -27,3 +27,11 @@ class Square:
         """Return the current square area."""
         area = self.__size ** 2
         return area
+
+    def my_print(self):
+        """prints in stdout the square with the character #."""
+        if self.__size == 0:
+            print()
+        else:
+            for i in range(self._size)
+            print("#"*self._size)
