@@ -57,7 +57,7 @@ class Rectangle:
         """Return string representation using print_symbol."""
         if self.__width == 0 or self.__height == 0:
             return ""
-        
+
         # We use str(self.print_symbol) in case it's set to a non-string type
         symbol = str(self.print_symbol)
         rows = [symbol * self.__width for _ in range(self.__height)]
