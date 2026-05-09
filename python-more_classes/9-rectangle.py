@@ -63,7 +63,7 @@ class Rectangle:
             raise TypeError("rect_1 must be an instance of Rectangle")
         if not isinstance(rect_2, Rectangle):
             raise TypeError("rect_2 must be an instance of Rectangle")
-        
+
         if rect_1.area() >= rect_2.area():
             return rect_1
         return rect_2
@@ -77,7 +77,7 @@ class Rectangle:
         """Return string representation using print_symbol."""
         if self.__width == 0 or self.__height == 0:
             return ""
-        
+
         symbol = str(self.print_symbol)
         rows = [symbol * self.__width for _ in range(self.__height)]
         return "\n".join(rows)
