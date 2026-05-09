@@ -52,7 +52,7 @@ class Rectangle:
         """Return a string representation of the rectangle using #."""
         if self.__width == 0 or self.__height == 0:
             return ""
-        
+
         rows = ["#" * self.__width for _ in range(self.__height)]
         return "\n".join(rows)
 
