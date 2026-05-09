@@ -60,4 +60,3 @@ class Rectangle:
     # REMOVE OR COMMENT OUT THE __repr__ METHOD BELOW
     # def __repr__(self):
     #     ...
-
