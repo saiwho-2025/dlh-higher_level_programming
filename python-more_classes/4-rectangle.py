@@ -54,9 +54,10 @@ class Rectangle:
         if self.__width == 0 or self.__height == 0:
             return ""
 
-        rect_rows = ["#" * self.__width for _ in range(self.__height)]
-        return "\n".join(rect_rows)
+        # Build rows of # and join with newlines
+        rows = ["#" * self.__width for _ in range(self.__height)]
+        return "\n".join(rows)
 
-    # REMOVE OR COMMENT OUT THE __repr__ METHOD BELOW
-    # def __repr__(self):
-    #     ...
+    def __repr__(self):
+        """Return string representation to recreate instance via eval()."""
+        return "Rectangle({}, {})".format(self.__width, self.__height)
