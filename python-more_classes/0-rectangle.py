@@ -2,6 +2,7 @@
 """This module defines an empty class Rectangle."""
 
 
-class Square:
+class Rectangle:
     """An empty class that defines a rectangle."""
     pass  # An empty block
+ 
