@@ -5,11 +5,15 @@
 class Rectangle:
     """Defines a rectangle."""
 
+    # Class attributes
+    number_of_instances = 0
+    print_symbol = "#"
+
     def __init__(self, width=0, height=0):
-        """Initialize rectangle."""
-        # We use the setters here to ensure validation logic runs
+        """Initialize rectangle and increment instance counter."""
         self.width = width
         self.height = height
+        Rectangle.number_of_instances += 1
 
     @property
     def width(self):
@@ -50,13 +54,20 @@ class Rectangle:
         return 2 * (self.__width + self.__height)
 
     def __str__(self):
-        """Return a string representation of the rectangle using #."""
+        """Return string representation using print_symbol."""
         if self.__width == 0 or self.__height == 0:
             return ""
+        
+        # We use str(self.print_symbol) in case it's set to a non-string type
+        symbol = str(self.print_symbol)
+        rows = [symbol * self.__width for _ in range(self.__height)]
+        return "\n".join(rows)
 
-        rect_rows = ["#" * self.__width for _ in range(self.__height)]
-        return "\n".join(rect_rows)
+    def __repr__(self):
+        """Return string representation to recreate instance via eval()."""
+        return "Rectangle({}, {})".format(self.__width, self.__height)
 
-    # REMOVE OR COMMENT OUT THE __repr__ METHOD BELOW
-    # def __repr__(self):
-    #     ...
+    def __del__(self):
+        """Print message on deletion and decrement instance counter."""
+        Rectangle.number_of_instances -= 1
+        print("Bye rectangle...")
