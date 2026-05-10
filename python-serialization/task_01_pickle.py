@@ -14,10 +14,10 @@ class CustomObject:
     def display(self):
         """Print the object's attributes in the specified format."""
         print(f"Name: {self.name}")
-        print(f"Age:{self.age}")
-        print(f"Is student:{self.is_student}")
+        print(f"Age: {self.age}")
+        print(f"Is Student: {self.is_student}")
 
-def serialize(self, filename):
+    def serialize(self, filename):
         """Serialize the current instance to a file using pickle."""
         try:
             with open(filename, 'wb') as f:
