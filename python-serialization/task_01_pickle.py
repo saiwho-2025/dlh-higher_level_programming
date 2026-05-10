@@ -5,14 +5,11 @@ import pickle
 
 
 class CustomObject:
-    """represent a custom object """
-
     def __init__(self, name, age, is_student):
-        """initialized a new oject instance
-
-        Name: the name of the object, a string
-        Age: the age of the object, an integer
-        is_student: True or False, a boolean"""
+        """Initialize the CustomObject with name, age, and student status."""
+        self.name = name
+        self.age = age
+        self.is_student = is_student
 
     def display(self):
         """Print the object's attributes in the specified format."""
@@ -20,14 +17,14 @@ class CustomObject:
         print(f"Age:{self.age}")
         print(f"Is student:{self.is_student}")
 
-    def serialize(self, filename):
+def serialize(self, filename):
         """Serialize the current instance to a file using pickle."""
         try:
             with open(filename, 'wb') as f:
-                pickle.dump(self.f)
-            except (OSError, IOError) as e:
-                print(f"Error writing to file: {e}")
-                return None
+                pickle.dump(self, f)
+        except (OSError, IOError) as e:
+            print(f"Error writing to file: {e}")
+            return None
 
     @classmethod
     def deserialize(cls, filename):
